@@ -93,5 +93,15 @@ redis.session.lock_wait_time => 2000 => 2000
 ```
 如果执行php/bin/php --ri redis命令可以输出上述信息，那么说明redis扩展已经安装成功了。
 
+# 如何使用
+```php
+<?php
+
+$redis = new Redis();
+$redis->connect('127.0.0.1', 6379);
+$redis->set('mykey', 'myval');
+$val = $redis->get('mykey');
+```
+
 # redis命令参考
 * [redis命令参考](http://doc.redisfans.com/)
