@@ -3,5 +3,5 @@
 
 ## 扩展列表
 
-* redis
-* xdiff
+* [redis](./extension/redis)
+* [xdiff](./extension/xdiff)
