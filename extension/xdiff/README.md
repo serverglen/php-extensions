@@ -22,9 +22,10 @@ tar xzf libxdiff-0.23.tar.gz
 
 ### 编译和安装
 ```bash
-$ mkdir -p ~/sys/local/libxdiff
+$ export LIBXDIFF_INSTALL_DIR=you_want_install_libxdiff_dir
+$ mkdir -p $LIBXDIFF_INSTALL_DIR
 $ cd libxdiff-0.23
-$ CFLAGS="-fPIC" ./configure --prefix=~/sys/local/libxdiff --enable-shared=no --enable-static=yes
+$ CFLAGS="-fPIC" ./configure --prefix=$LIBXDIFF_INSTALL_DIR --enable-shared=no --enable-static=yes
 $ make -j4
 $ make install
 ```
@@ -66,7 +67,7 @@ dnl PHP_CHECK_LIBRARY(xdiff,xdl_rabdiff, [ ], AC_MSG_ERROR([your libxdiff versio
 $ export PHP_HOME=you_php_home
 $ cd xdiff-2.1.0
 $ $PHP_HOME/php/bin/phpize
-$ ./configure --with-php-config=$PHP_HOME/php/bin/php-config --with-xdiff=~/sys/local/libxdiff
+$ ./configure --with-php-config=$PHP_HOME/php/bin/php-config --with-xdiff=$LIBXDIFF_INSTALL_DIR
 $ make -j4
 ```
 执行完了之后，modules目录会产出xdiff.so
