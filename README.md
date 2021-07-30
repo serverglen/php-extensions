@@ -3,4 +3,5 @@
 
 ## 扩展列表
 
+* redis
 * xdiff
